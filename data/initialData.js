@@ -1,244 +1,144 @@
-const initialData = [
-    {
-      bookName: "The Catcher in the Rye",
-      authorName: "J.D. Salinger",
-      ISBN: "9780316769174",
-      genre: "Fiction"
-    },
-    {
-      "bookName": "To Kill a Mockingbird",
-      "authorName": "Harper Lee",
-      "ISBN": "9780060935467",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "1984",
-      "authorName": "George Orwell",
-      "ISBN": "9780451524935",
-      "genre": "Science Fiction"
-    },
-    {
-      "bookName": "Pride and Prejudice",
-      "authorName": "Jane Austen",
-      "ISBN": "9780141439518",
-      "genre": "Romance"
-    },
-    {
-      "bookName": "The Great Gatsby",
-      "authorName": "F. Scott Fitzgerald",
-      "ISBN": "9780743273565",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "Moby-Dick",
-      "authorName": "Herman Melville",
-      "ISBN": "9781853260087",
-      "genre": "Adventure"
-    },
-    {
-      "bookName": "Jane Eyre",
-      "authorName": "Charlotte Bronte",
-      "ISBN": "9780141441146",
-      "genre": "Romance"
-    },
-    {
-      "bookName": "The Hobbit",
-      "authorName": "J.R.R. Tolkien",
-      "ISBN": "9780618260300",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "The Lord of the Rings",
-      "authorName": "J.R.R. Tolkien",
-      "ISBN": "9780618640157",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "Harry Potter and the Philosopher's Stone",
-      "authorName": "J.K. Rowling",
-      "ISBN": "9780747532743",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "The Chronicles of Narnia",
-      "authorName": "C.S. Lewis",
-      "ISBN": "9780064471190",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "Animal Farm",
-      "authorName": "George Orwell",
-      "ISBN": "9780452284241",
-      "genre": "Satire"
-    },
-    {
-      "bookName": "Brave New World",
-      "authorName": "Aldous Huxley",
-      "ISBN": "9780060850524",
-      "genre": "Science Fiction"
-    },
-    {
-      "bookName": "The Odyssey",
-      "authorName": "Homer",
-      "ISBN": "9780140449112",
-      "genre": "Epic"
-    },
-    {
-      "bookName": "The Divine Comedy",
-      "authorName": "Dante Alighieri",
-      "ISBN": "9780141195872",
-      "genre": "Epic"
-    },
-    {
-      "bookName": "The Grapes of Wrath",
-      "authorName": "John Steinbeck",
-      "ISBN": "9780143039433",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "Wuthering Heights",
-      "authorName": "Emily Bronte",
-      "ISBN": "9780141439556",
-      "genre": "Gothic"
-    },
-    {
-      "bookName": "Frankenstein",
-      "authorName": "Mary Shelley",
-      "ISBN": "9780141439471",
-      "genre": "Gothic"
-    },
-    {
-      "bookName": "The Picture of Dorian Gray",
-      "authorName": "Oscar Wilde",
-      "ISBN": "9780141442464",
-      "genre": "Gothic"
-    },
-    {
-      "bookName": "Fahrenheit 451",
-      "authorName": "Ray Bradbury",
-      "ISBN": "9781451673319",
-      "genre": "Science Fiction"
-    },
-    {
-      "bookName": "The Alchemist",
-      "authorName": "Paulo Coelho",
-      "ISBN": "9780062315007",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "Crime and Punishment",
-      "authorName": "Fyodor Dostoevsky",
-      "ISBN": "9780140449136",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "The Scarlet Letter",
-      "authorName": "Nathaniel Hawthorne",
-      "ISBN": "9780486280486",
-      "genre": "Romance"
-    },
-    {
-      "bookName": "The Adventures of Tom Sawyer",
-      "authorName": "Mark Twain",
-      "ISBN": "9780486400778",
-      "genre": "Adventure"
-    },
-    {
-      "bookName": "One Hundred Years of Solitude",
-      "authorName": "Gabriel Garcia Marquez",
-      "ISBN": "9780060883287",
-      "genre": "Magical Realism"
-    },
-    {
-      "bookName": "Don Quixote",
-      "authorName": "Miguel de Cervantes Saavedra",
-      "ISBN": "9780060934347",
-      "genre": "Adventure"
-    },
-    {
-      "bookName": "Anna Karenina",
-      "authorName": "Leo Tolstoy",
-      "ISBN": "9780143035008",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "The Count of Monte Cristo",
-      "authorName": "Alexandre Dumas",
-      "ISBN": "9780140449266",
-      "genre": "Adventure"
-    },
-    {
-      "bookName": "War and Peace",
-      "authorName": "Leo Tolstoy",
-      "ISBN": "9780143039990",
-      "genre": "Historical Fiction"
-    },
-    {
-      "bookName": "The Kite Runner",
-      "authorName": "Khaled Hosseini",
-      "ISBN": "9781594631931",
-      "genre": "Fiction"
-    },
-    {
-      "bookName": "The Hobbit",
-      "authorName": "J.R.R. Tolkien",
-      "ISBN": "9780618260300",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "The Lord of the Rings",
-      "authorName": "J.R.R. Tolkien",
-      "ISBN": "9780618640157",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "Harry Potter and the Sorcerer's Stone",
-      "authorName": "J.K. Rowling",
-      "ISBN": "9780590353427",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "The Chronicles of Narnia",
-      "authorName": "C.S. Lewis",
-      "ISBN": "9780064404990",
-      "genre": "Fantasy"
-    },
-    {
-      "bookName": "The Hunger Games",
-      "authorName": "Suzanne Collins",
-      "ISBN": "9780439023481",
-      "genre": "Science Fiction"
-    },
-    {
-      "bookName": "The Girl with the Dragon Tattoo",
-      "authorName": "Stieg Larsson",
-      "ISBN": "9780307269751",
-      "genre": "Mystery"
-    },
-    {
-      "bookName": "The Da Vinci Code",
-      "authorName": "Dan Brown",
-      "ISBN": "9780307474278",
-      "genre": "Mystery"
-    },
-    {
-      "bookName": "Gone Girl",
-      "authorName": "Gillian Flynn",
-      "ISBN": "9780307588371",
-      "genre": "Thriller"
-    },
-    {
-      "bookName": "The Fault in Our Stars",
-      "authorName": "John Green",
-      "ISBN": "9780525478812",
-      "genre": "Young Adult"
-    },
-    {
-      "bookName": "Dune",
-      "authorName": "Frank Herbert",
-      "ISBN": "9780441172719",
-      "genre": "Science Fiction"
-    }
+const initialData =[
+  {
+    "Id": 101,
+    "authorName": "MARY CLARE JALONICK",
+    "title": "Senators urge $32 billion in emergency spending on AI after finishing yearlong review",
+    "description": "A bipartisan group of four senators led by Majority Leader Chuck Schumer is recommending that Congress spend at least $32 billion over the next three years to develop artificial intelligence and also put safeguards around it",
+    "publishedAt": "2024-05-15T09:18:37Z"
+  },
+  {
+    "Id": 102,
+    "authorName": "John Doe",
+    "title": "New breakthrough in quantum computing announced by researchers",
+    "description": "Scientists have achieved a significant milestone in quantum computing, potentially paving the way for more powerful and efficient computers.",
+    "publishedAt": "2024-05-14T12:34:56Z"
+  },
+  {
+    "Id": 103,
+    "authorName": "Jane Smith",
+    "title": "Global climate summit highlights urgent need for action",
+    "description": "World leaders are gathering to discuss and address the pressing issues related to climate change and global warming.",
+    "publishedAt": "2024-05-13T08:45:23Z"
+  },
+  {
+    "Id": 104,
+    "authorName": "Alice Johnson",
+    "title": "Tech giants unveil new AI-powered tools at annual conference",
+    "description": "Leading technology companies are showcasing their latest innovations in artificial intelligence at this year's major tech conference.",
+    "publishedAt": "2024-05-12T11:29:44Z"
+  },
+  {
+    "Id": 105,
+    "authorName": "Robert Brown",
+    "title": "New study links diet and mental health",
+    "description": "Recent research suggests that a balanced diet can have a significant impact on mental well-being, offering new insights into holistic health approaches.",
+    "publishedAt": "2024-05-11T10:15:37Z"
+  },
+  {
+    "Id": 106,
+    "authorName": "Emily White",
+    "title": "SpaceX successfully launches new satellite into orbit",
+    "description": "SpaceX has successfully launched a new satellite, marking another milestone in space exploration and satellite technology.",
+    "publishedAt": "2024-05-10T09:48:52Z"
+  },
+  {
+    "Id": 107,
+    "authorName": "Michael Green",
+    "title": "Advances in renewable energy technology showcased at expo",
+    "description": "The latest advancements in renewable energy technologies, including solar and wind power, are being showcased at an international expo.",
+    "publishedAt": "2024-05-09T13:57:34Z"
+  },
+  {
+    "Id": 108,
+    "authorName": "Linda Harris",
+    "title": "Health experts warn of potential new flu outbreak",
+    "description": "Health officials are closely monitoring a new strain of flu that has the potential to cause a significant outbreak.",
+    "publishedAt": "2024-05-08T15:30:21Z"
+  },
+  {
+    "Id": 109,
+    "authorName": "James Martinez",
+    "title": "New electric vehicle model promises longer range and faster charging",
+    "description": "A leading car manufacturer has unveiled its latest electric vehicle model, which promises a longer driving range and faster charging times.",
+    "publishedAt": "2024-05-07T14:22:19Z"
+  },
+  {
+    "Id": 110,
+    "authorName": "Patricia Wilson",
+    "title": "Breakthrough in cancer research offers new hope",
+    "description": "Scientists have made a significant breakthrough in cancer research, potentially leading to more effective treatments in the future.",
+    "publishedAt": "2024-05-06T13:11:37Z"
+  },
+  {
+    "Id": 111,
+    "authorName": "Steven Clark",
+    "title": "Global markets react to economic policy changes",
+    "description": "Stock markets around the world are reacting to recent changes in economic policies announced by major governments.",
+    "publishedAt": "2024-05-05T12:40:44Z"
+  },
+  {
+    "Id": 112,
+    "authorName": "Barbara Lewis",
+    "title": "New educational initiative aims to close the digital divide",
+    "description": "A new initiative is being launched to provide digital resources and support to underprivileged students, aiming to close the digital divide in education.",
+    "publishedAt": "2024-05-04T10:25:37Z"
+  },
+  {
+    "Id": 113,
+    "authorName": "Kevin Lee",
+    "title": "Tech company announces major cybersecurity update",
+    "description": "A leading tech company has announced a major update to its cybersecurity measures, aiming to protect users from emerging threats.",
+    "publishedAt": "2024-05-03T11:47:29Z"
+  },
+  {
+    "Id": 114,
+    "authorName": "Sandra Scott",
+    "title": "New archaeological discovery sheds light on ancient civilization",
+    "description": "Archaeologists have uncovered new artifacts that provide insights into an ancient civilization, offering a deeper understanding of its culture and history.",
+    "publishedAt": "2024-05-02T09:33:45Z"
+  },
+  {
+    "Id": 115,
+    "authorName": "Daniel Roberts",
+    "title": "Innovative startup develops sustainable packaging solution",
+    "description": "An innovative startup has developed a new sustainable packaging solution that could reduce plastic waste and environmental impact.",
+    "publishedAt": "2024-05-01T08:50:38Z"
+  },
+  {
+    "Id": 116,
+    "authorName": "Laura King",
+    "title": "New policy measures aim to boost economic growth",
+    "description": "Governments are implementing new policy measures aimed at stimulating economic growth and addressing key financial challenges.",
+    "publishedAt": "2024-04-30T11:15:29Z"
+  },
+  {
+    "Id": 117,
+    "authorName": "Andrew Young",
+    "title": "Medical breakthrough offers new treatment for chronic pain",
+    "description": "A recent medical breakthrough has led to the development of a new treatment option for individuals suffering from chronic pain.",
+    "publishedAt": "2024-04-29T10:12:44Z"
+  },
+  {
+    "Id": 118,
+    "authorName": "Susan Edwards",
+    "title": "Global conference on AI ethics addresses key issues",
+    "description": "Experts and policymakers are gathering at a global conference to discuss the ethical implications and governance of artificial intelligence.",
+    "publishedAt": "2024-04-28T14:23:37Z"
+  },
+  {
+    "Id": 119,
+    "authorName": "David Wright",
+    "title": "New advancements in biotechnology presented at annual summit",
+    "description": "The latest advancements in biotechnology are being presented at this year's annual summit, highlighting innovative research and applications.",
+    "publishedAt": "2024-04-27T09:45:21Z"
+  },
+  {
+    "Id": 120,
+    "authorName": "Michelle Baker",
+    "title": "Major city to implement new public transportation system",
+    "description": "A major city has announced plans to implement a new public transportation system designed to improve efficiency and reduce environmental impact.",
+    "publishedAt": "2024-04-26T13:50:38Z"
+  }
 ]
 
 module.exports = initialData
